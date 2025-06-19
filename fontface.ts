@@ -1,4 +1,4 @@
-// @ts-types="npm:@types/css-tree"
+// @ts-types="@types/css-tree"
 import * as cssTree from "css-tree";
 
 /**
