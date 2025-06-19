@@ -1,0 +1,19 @@
+name: Publish
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  jsr:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-jsr
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish package
+        run: npx jsr publish
