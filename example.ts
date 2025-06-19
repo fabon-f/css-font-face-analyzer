@@ -31,6 +31,9 @@ async function analyzeGoogleFont(fontFamily: string) {
   };
 }
 
-console.log(
-  (await analyzeGoogleFont("Noto Sans JP")).codePointCountsPerChunk.length,
-);
+const result = await analyzeGoogleFont("Noto Sans JP");
+
+console.log(`
+chunks: ${result.codePointCountsPerChunk.length}
+code points: ${result.totalCodePoints}
+`.trim());
