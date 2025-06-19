@@ -2,6 +2,10 @@
   "name": "@fabon/css-font-face-analyzer",
   "version": "0.1.0",
   "exports": "./mod.ts",
+  "publish": {
+    "include": ["**/*.ts"],
+    "exclude": ["*.test.ts"]
+  },
   "tasks": {
     "dev": "deno run --watch main.ts"
   },
